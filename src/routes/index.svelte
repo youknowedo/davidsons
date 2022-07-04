@@ -15,5 +15,5 @@
     <img src={working} alt="">
 
     <h2 class="text-2xl font-bold">Vår sida är under konstruktion</h2>
-    <p class="text-sb-black/50">Vi jobbar med det för att ge dig den bästa upplevelsen!</p>
+    <p class="text-center">Vi jobbar med det för att ge dig den bästa upplevelsen!</p>
 </Section> 
