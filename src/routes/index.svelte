@@ -8,6 +8,11 @@
 	import { goto } from "$app/navigation";
 </script>
 
+<svelte:head>
+	<title>Davidsons Gröna Fingrar | Hydroponiska lösningar</title>
+	<meta name="description" content="Ett riktigt smart sätt att odla. Genom hydroponiska lösningar odlar vi våra växter i vatten istället för vanlig jord. Spara pengar, vatten och rädda världen du med idag!">
+</svelte:head>
+
 <div class="absolute top-0 w-full">
 	<div class="container flex items-center py-8 md:py-16">
 		<img src={logo} class="h-24" alt="">
