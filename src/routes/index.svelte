@@ -42,6 +42,8 @@
 	</div>
 </div>
 
-<footer class="bg-green flex justify-center items-center text-white py-4 text-center">
-	2021-{new Date().getFullYear()} &copy; Davidssons Gröna Fingrar HB. Alla rättigheter förbehållna.
+<footer class="bg-green flex justify-center items-center text-white py-4 px-2 text-center">
+	<div>
+		2021-{new Date().getFullYear()} &copy; Davidssons Gröna Fingrar HB. Alla rättigheter förbehållna. Sida av <a href="https://seabird.digital" class="ml-1 text-yellow underline hover:no-underline">Seabird Digital</a>
+	</div>
 </footer>
