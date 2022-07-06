@@ -68,7 +68,7 @@
 		</div>
 	</div>
 	
-	<footer class="bg-green flex justify-center items-center text-white py-4 px-2 text-center">
+	<footer class="bg-green flex justify-center items-center text-white py-4 px-12 text-center">
 		<div>
 			2021-{new Date().getFullYear()} &copy; Davidssons Gröna Fingrar HB. Alla rättigheter förbehållna.
 			Sida av
