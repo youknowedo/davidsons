@@ -9,7 +9,7 @@
 	import logo from '$lib/assets/DavidsonsB.png';
 
 	import { goto } from '$app/navigation';
-	import { site } from '$lib/assets/supabase/stores/site';
+	import { site } from '$lib/supabase/stores/site';
 
 	const page = $site?.pages[0]
 </script>

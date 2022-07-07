@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
-	import { supabase } from '$lib/assets/supabase/client';
+	import { supabase } from '$lib/supabase/client';
 
-	import { site } from '$lib/assets/supabase/stores/site';
+	import { site } from '$lib/supabase/stores/site';
 
 	import type { Load } from '@sveltejs/kit';
 

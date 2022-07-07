@@ -1,0 +1,22 @@
+{
+    "dataMeta": {
+        "products": {
+            "fixedLength": false
+        }
+    },
+
+    "data": {
+        "products": [
+            {
+                "title": "Kangkong - Vattenspenat",
+                "description": "idk",
+                "price": 50
+            },
+            {
+                "title": "Näring",
+                "description": "wuhu",
+                "price": 100
+            }
+        ]
+    }
+}

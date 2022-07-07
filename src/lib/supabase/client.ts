@@ -5,19 +5,20 @@ const supabaseAnonKey = import.meta.env.VITE_SVELTE_APP_SUPABASE_ANON_KEY;
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-export type Site = {
+export interface Site {
 	id: string;
-	site_info: SiteData;
+	site_info: SiteInfo;
 	admins: string[];
 	pages: Page[];
-};
+	data: SiteData;
+}
 
-export type SiteData = {
+export interface SiteInfo {
 	title: string;
 	tagline: string;
 	ico?: string;
 	ico_url?: string;
-};
+}
 
 export interface Page {
 	slug: string;
@@ -36,4 +37,22 @@ export interface Section {
 export interface CTA {
 	text: string;
 	url: string;
+}
+
+export interface SiteData {
+	data: Data;
+}
+
+export interface DataObject {
+	fixedLength: boolean;
+}
+
+export interface Data {
+	products: Product[];
+}
+
+export interface Product {
+	title: string;
+	description: string;
+	price: number;
 }
