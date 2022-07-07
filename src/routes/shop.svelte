@@ -23,5 +23,5 @@
 
 {#each $site?.data.data.products || [] as product}
 	<h1>{product.title}</h1>
-	<button on:click={() => addToCart(product.title.replaceAll(' ', '-'))}>Add To Cart</button>
+	<button on:click={() => addToCart(product.id)}>Add To Cart</button>
 {/each}
