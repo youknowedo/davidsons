@@ -10,6 +10,7 @@
 
 	import { goto } from '$app/navigation';
 	import { site } from '$lib/supabase/stores/site';
+import Cart from '$lib/commerce/components/Cart.svelte';
 
 	const page = $site?.pages[0]
 </script>
@@ -24,8 +25,10 @@
 
 <div class="overflow-x-hidden">
 	<div class="z-20 absolute top-0 w-full">
-		<div class="container flex items-center py-8 md:py-16">
+		<div class="container flex items-center justify-between py-8 md:py-16">
 			<img src={logo} class="h-24" alt="" />
+
+			<Cart />			
 		</div>
 	</div>
 	
