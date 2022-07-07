@@ -3,7 +3,9 @@
 	import { goto } from '$app/navigation';
 
 	import { site } from '$lib/supabase/stores/site';
-import Cart from '$lib/commerce/components/Cart.svelte';
+	import Cart from '$lib/commerce/components/Cart.svelte';
+
+	import plant from '$lib/assets/plant.png';
 
 	const addToCart = (id: string) => {
 		let tempCart = $cart;
@@ -20,12 +22,23 @@ import Cart from '$lib/commerce/components/Cart.svelte';
 	};
 </script>
 
-<Cart/>
+<div class="bg-yellow/10 py-16 border-b">
+	<div class="container">
+		<h1 class="text-5xl font-playfair">Shop</h1>
+	</div>
+</div>
 
-{JSON.stringify($cart)}
+<div class="container grid grid-flow-row grid-cols-5 gap-4 py-12">
+	{#each $site?.data.data.products || [] as product}
+		<div class="border shadow-md rounded-lg max-h-96">
+			<div class="w-full flex justify-center py-12 bg-yellow">
+				<img src={plant} class="h-44" alt="" />
+			</div>
 
-{#each $site?.data.data.products || [] as product}
-	<h1>{product.title}</h1>
-	<button on:click={() => addToCart(product.id)}>Add To Cart</button>
-{/each}
-<button on:click={() => goto('/shop/checkout')}>Checkout</button>
+			<div class="px-6 py-4 h-32">
+				<h2 on:click={() => addToCart(product.id)} class="text-lg font-playfair hover:text-green cursor-pointer">{product.title}</h2>
+				<p class="text-black/75 line-clamp-2">{product.description}</p>
+			</div>
+		</div>
+	{/each}
+</div>

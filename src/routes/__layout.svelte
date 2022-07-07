@@ -24,4 +24,6 @@
 	import '../app.css';
 </script>
 
-<slot />
+<div class="overflow-x-hidden">
+	<slot />
+</div>
