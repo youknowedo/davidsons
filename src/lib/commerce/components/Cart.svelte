@@ -3,6 +3,7 @@
 
     import CartEmpty from "$lib/assets/cart-empty.png"
     import CartFull from "$lib/assets/cart-full.png"
+import { goto } from "$app/navigation";
 
     export let small = false
 
@@ -26,7 +27,7 @@
     })
 </script>
 
-<div class="relative {small ? "h-10 w-10" : "h-12 w-12"}">
+<div on:click={() => goto("/shop/checkout")} class="relative {small ? "h-10 w-10" : "h-12 w-12"}">
     <img src={($cart.length == 0) ? CartEmpty : CartFull} class="{small ? "h-10" : "h-12"}" alt="Cart">
 
     {#if $cart.length != 0}
