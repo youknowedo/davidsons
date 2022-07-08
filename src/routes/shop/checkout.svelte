@@ -87,42 +87,45 @@
 			{/if}
 		</div>
 
-		<div class="w-1/2 h-fit pl-4">
-			<div class="rounded-lg border w-full">
+		<div class="w-96 mx-auto h-fit pl-4">
+			<div class="p-8">
+				<h2 class="text-2xl font-playfair">Cart</h2>
 				<table class="table-auto text-left w-full">
 					<tbody>
 						{#each $cart as item}
 							<tr class="h-12">
-								<td class="p-4">
+								<td class="py-2">
 									{$site?.data.data.products.find((value) => value.id == item.id)?.title}
 									<b>x{item.amount}</b>
 								</td>
-								<td class="p-4">
+								<td class="py-2 text-right">
 									{$site?.data.data.products.find((value) => value.id == item.id)?.price} kr
 								</td>
 							</tr>
 						{/each}
 					</tbody>
-					<tfoot class="border-t bg-yellow/20">
-						<tr class="h-12">
-							<td class="p-4 font-bold">Summa</td>
-							<td class="p-4 font-bold">{amount} kr</td>
-						</tr>
-					</tfoot>
 				</table>
 			</div>
-			<button
-				class="bg-green w-full py-3 rounded-full text-lg text-white mt-8"
-				disabled={processing || !stripe || !clientSecret}
-			>
-				{#if processing}
-					Processing...
-				{:else if !stripe || !clientSecret}
-					Loading...
-				{:else}
-					Pay
-				{/if}
-			</button>
+			
+			<div class="p-8 pt-0">
+				<div class="flex justify-between">
+					<h4 class="text-3xl font-playfair">Totalt</h4>
+					<h3 class="text-3xl font-playfair">{amount} kr</h3>
+				</div>
+				
+				<button
+					class="bg-green w-full py-3 rounded-full text-lg text-white mt-8"
+					disabled={processing || !stripe || !clientSecret}
+				>
+					{#if processing}
+						Processing...
+					{:else if !stripe || !clientSecret}
+						Loading...
+					{:else}
+						Pay
+					{/if}
+				</button>
+			</div>
 		</div>
 	</div>
 {:else}
