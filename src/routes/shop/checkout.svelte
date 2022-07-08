@@ -64,28 +64,29 @@
 	</div>
 </div>
 
-<div class="container flex py-16">
-	<div class="w-1/2 pr-4">
-		{#if error}
-			<p class="error">{error.message || error.raw.message} Please try again.</p>
-		{/if}
-		{#if stripe && clientSecret}
-			<form on:submit|preventDefault={submit}>
-				<PaymentElement
-					{stripe}
-					{clientSecret}
-					bind:elements
-					theme="flat"
-					labels="floating"
-					variables={{ colorPrimary: '#7c4dff' }}
-					rules={{ '.Input': { border: 'solid 1px #0002' } }}
-				/>
-			</form>
+{#if $cart.length > 0}
+	<div class="container flex py-16">
+		<div class="w-1/2 pr-4">
+			{#if error}
+				<p class="error">{error.message || error.raw.message} Please try again.</p>
+			{/if}
+			{#if stripe && clientSecret}
+				<form on:submit|preventDefault={submit}>
+					<PaymentElement
+						{stripe}
+						{clientSecret}
+						bind:elements
+						theme="flat"
+						labels="floating"
+						variables={{ colorPrimary: '#7c4dff' }}
+						rules={{ '.Input': { border: 'solid 1px #0002' } }}
+					/>
+				</form>
 			{:else}
-			Loading...
+				Loading...
 			{/if}
 		</div>
-		
+
 		<div class="w-1/2 h-fit pl-4">
 			<div class="rounded-lg border w-full">
 				<table class="table-auto text-left w-full">
@@ -97,14 +98,15 @@
 					</thead>
 					<tbody>
 						{#each $cart as item}
-						<tr class="h-12">
-							<td class="p-4">
-								{$site?.data.data.products.find((value) => value.id == item.id)?.title} <b>x{item.amount}</b>
-							</td>
-							<td class="p-4">
-								{$site?.data.data.products.find((value) => value.id == item.id)?.price} kr
-							</td>
-						</tr>
+							<tr class="h-12">
+								<td class="p-4">
+									{$site?.data.data.products.find((value) => value.id == item.id)?.title}
+									<b>x{item.amount}</b>
+								</td>
+								<td class="p-4">
+									{$site?.data.data.products.find((value) => value.id == item.id)?.price} kr
+								</td>
+							</tr>
 						{/each}
 					</tbody>
 					<tfoot class="border-t bg-yellow/20">
@@ -114,9 +116,11 @@
 						</tr>
 					</tfoot>
 				</table>
-
 			</div>
-			<button class="bg-green w-full py-3 rounded-full text-lg text-white mt-8" disabled={processing || !stripe || !clientSecret}>
+			<button
+				class="bg-green w-full py-3 rounded-full text-lg text-white mt-8"
+				disabled={processing || !stripe || !clientSecret}
+			>
 				{#if processing}
 					Processing...
 				{:else if !stripe || !clientSecret}
@@ -127,4 +131,6 @@
 			</button>
 		</div>
 	</div>
-	
+{:else}
+	<div class="container p-8">Nothing in cart</div>
+{/if}
