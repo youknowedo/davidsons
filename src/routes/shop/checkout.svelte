@@ -90,12 +90,6 @@
 		<div class="w-1/2 h-fit pl-4">
 			<div class="rounded-lg border w-full">
 				<table class="table-auto text-left w-full">
-					<thead class="border-b bg-yellow/20">
-						<tr class="h-12">
-							<th class="p-4">Produkt</th>
-							<th class="p-4">Pris</th>
-						</tr>
-					</thead>
 					<tbody>
 						{#each $cart as item}
 							<tr class="h-12">
