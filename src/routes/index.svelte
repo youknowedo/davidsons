@@ -33,7 +33,7 @@
 		class="w-full py-52 px-8 md:py-64 flex flex-col justify-center items-center bg-yellow/75 relative"
 	>
 		<div class="z-10 relative">
-			<h1 class="font-playfair font-medium text-5xl md:text-7xl leading-snug mb-12 md:mr-32 lg:mr-96">
+			<h1 class="font-playfair font-medium text-5xl md:text-7xl md:leading-snug mb-12 md:mr-32 lg:mr-96">
 				{@html page?.sections[0].heading}
 			</h1>
 			<p class="w-80 text-xl md:text-2xl">
@@ -53,7 +53,6 @@
 		</div>
 	
 		<img src={vase1} class="z- 10 block md:hidden absolute h-64 right-16 -bottom-8 rotate-12" alt="vase">
-		<img src={vase2} class="block md:hidden absolute h-44 -left-28 bottom-64 -rotate-45" alt="vase">
 		<img src={wateringCan} class="block md:hidden absolute h-44 -right-16 -top-8 -rotate-45" alt="vase">
 	</div>
 	
