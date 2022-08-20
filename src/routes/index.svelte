@@ -24,19 +24,19 @@
 
 <div class="overflow-x-hidden">
 	<div class="z-20 absolute top-0 w-full">
-		<div class="container flex items-center py-8 md:py-16">
+		<div class="container flex items-center py-8 2xl:py-16">
 			<img src={logo} class="h-24" alt="" />
 		</div>
 	</div>
 	
 	<div
-		class="w-full py-52 px-8 md:py-64 flex flex-col justify-center items-center bg-yellow/75 relative"
+		class="w-full py-52 px-8 md:py-36 2xl:py-64 flex flex-col justify-center items-center bg-yellow/75 relative"
 	>
 		<div class="z-10 relative">
-			<h1 class="font-playfair font-medium text-5xl md:text-7xl md:leading-snug mb-12 md:mr-32 lg:mr-96">
+			<h1 class="font-playfair font-medium text-5xl md:text-3xl xl:text-7xl md:leading-snug mb-12 md:mr-32 lg:mr-96">
 				{@html page?.sections[0].heading}
 			</h1>
-			<p class="w-80 text-xl md:text-2xl">
+			<p class="w-80 text-xl 2xl:text-2xl">
 				{@html page?.sections[0].body}
 			</p>
 	
