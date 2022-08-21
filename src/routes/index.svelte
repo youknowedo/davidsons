@@ -48,7 +48,7 @@
 				<!-- <button class="text-xl ml-4 border-black border-b-2 pt-[2px] hover:border-transparent hover:pt-[6pt] hover:pb-1 duration-200">Läs mer</button> -->
 			</div>
 	
-			<img src={florist} class="hidden md:block absolute top-32 left-[350px]" alt="" />
+			<img src={florist} class="hidden md:block absolute top-32 left-[500px] h-[524px]" alt="" />
 			
 		</div>
 	
@@ -57,7 +57,7 @@
 	</div>
 	
 	<div class="container flex justify-center items-center py-32 md:py-32">
-		<img src={plant} class="hidden md:block h-96 -mt-12 mr-16" alt="" />
+		<img src={plant} class="hidden md:block w-96 -mt-12 mr-16" alt="" />
 		<div class="md:w-1/2">
 			<h2 class="font-playfair font-bold text-4xl leading-loose text-center md:text-left">{@html page?.sections[1].heading}</h2>
 			<p class="text-center text-lg md:text-left">
